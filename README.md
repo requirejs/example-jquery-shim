@@ -8,24 +8,24 @@ The most important part is the app.js file, which specifies the [shim configurat
 ###File structure 
 
 - tools/
-    build.js
-    r.js
+    - build.js
+    - r.js
 
 - www/
-    app.html
-    js/
-      app.js
-      lib/
-        jquery.js
-        jquery.alpha.js
-        jquery.beta.js
-        require.js
-      app/
-        main.js
+    - app.html
+    - js/
+      - app.js
+      - lib/
+        - jquery.js
+        - jquery.alpha.js
+        - jquery.beta.js
+        - require.js
+      - app/
+        - main.js
 
 ###How to see it in action
 
-Just serve up the www/ folder using any web server you'd like. If you have python installed, an easy way is to navigate into the www/ directory and type `python -m SimpleHttpServer`
+Just serve up the www/ folder using any web server you'd like. If you have python installed, an easy way is to navigate into the www/ directory and type `python -m SimpleHTTPServer`
 
 ###How to optimize ut using r.js
 To use the optimizer, you need [node.js](http://nodejs.org) or Java 6 installed. These instructions assume Node is being used. See the [Optimization page](http://requirejs.org/docs/optimization.html]for more information.
