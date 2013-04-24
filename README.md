@@ -28,7 +28,7 @@ The most important part is the app.js file, which specifies the [shim configurat
 Just serve up the www/ folder using any web server you'd like. If you have python installed, an easy way is to navigate into the www/ directory and type `python -m SimpleHTTPServer`
 
 ###How to optimize ut using r.js
-To use the optimizer, you need [node.js](http://nodejs.org) or Java 6 installed. These instructions assume Node is being used. See the [Optimization page](http://requirejs.org/docs/optimization.html]for more information.
+To use the optimizer, you need [node.js](http://nodejs.org) or Java 6 installed. These instructions assume Node is being used. See the [Optimization page](http://requirejs.org/docs/optimization.html) for more information.
  
 r.js and a build configuration is included in the tools/ folder. To build, navigate to tools/ and type `node r.js -o build.js`. You will find the built product in the www-build folder. If you serve that directory instead, you can see in the network panel of the web developer tools that the files aren't loaded separately any more.
 
