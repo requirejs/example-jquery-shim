@@ -5,7 +5,7 @@ This example shows one way to load jQuery and jQuery plugins with require.js.  j
 
 The most important part is the app.js file, which specifies the [shim configuration](http://requirejs.org/docs/api.html#config-shim) for the plugins. 
 
-###File structure 
+###Project structure 
 
 - tools/
     - build.js
@@ -22,6 +22,41 @@ The most important part is the app.js file, which specifies the [shim configurat
         - require.js
       - app/
         - main.js
+
+###How it's set up
+The main file of this setup is www/js/app.js. It is loaded from app.html by this line:
+```html
+<script data-main="js/app" src="js/lib/require.js"></script>
+```
+
+App.js is mainly about configuration. The shim configuration specifies jQuery as a dependency for jQuery.alpha and jQUery.beta. Finally, our main code is loaded at the bottom of the file:
+
+```javascript
+requirejs.config({
+    "baseUrl": "js/lib",
+    "paths": {
+      "app": "../app"
+    },
+    "shim": {
+        "jquery.alpha": ["jquery"],
+        "jquery.beta": ["jquery"]
+    }
+});
+
+// Load the main app module to start the app
+requirejs(["app/main"]);
+```
+
+App/main.js is where the app logic is:
+
+```javascript
+define(["jquery", "jquery.alpha", "jquery.beta"], function($) {
+    //the jquery.alpha.js and jquery.beta.js plugins have been loaded.
+    $(function() {
+        $('body').alpha().beta();
+    });
+});
+```
 
 ###How to see it in action
 
