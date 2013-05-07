@@ -7,20 +7,23 @@ The most important part is the app.js file, which specifies the [shim configurat
 
 ###Project structure
 
-- tools/
-    - build.js
-    - r.js
-- www/
-    - app.html
-    - js/
-        - app.js
-        - lib/
-            - jquery.js
-            - jquery.alpha.js
-            - jquery.beta.js
-            - require.js
-        - app/
-            - main.js
+tools/
+
+- build.js
+- r.js
+
+www/app.html
+
+www/js/
+
+- app.js
+- lib/
+    - jquery.js
+    - jquery.alpha.js
+    - jquery.beta.js
+    - require.js
+- app/
+    - main.js
 
 ###How it's set up
 The main file of this setup is www/js/app.js. It is loaded from app.html by this line:
