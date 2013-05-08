@@ -64,7 +64,7 @@ define(["jquery", "jquery.alpha", "jquery.beta"], function($) {
 
 ###How to see it in action
 
-Just serve up the www/ folder using any web server you'd like.
+Just serve up the www/ folder using any web server you'd like. To get you set up quickly, we've included a node.js static file server in tools/. Start the server by typing `node tools/server.js` from the command line, and then go to [localhost:8888/www/app.html](http://localhost:8888/www/app.html) in your browser.
 
 ###How to optimize ut using r.js
 To use the optimizer, you need [node.js](http://nodejs.org) or Java 6 installed. These instructions assume Node is being used. See the [Optimization page](http://requirejs.org/docs/optimization.html) for more information.
