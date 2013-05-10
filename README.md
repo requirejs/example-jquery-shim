@@ -66,7 +66,7 @@ define(["jquery", "jquery.alpha", "jquery.beta"], function($) {
 
 Just serve up the www/ folder using any web server you'd like. To get you set up quickly, we've included a node.js static file server in tools/. Start the server by typing `node tools/server.js` from the command line, and then go to [localhost:8888/www/app.html](http://localhost:8888/www/app.html) in your browser.
 
-###How to optimize ut using r.js
+###How to optimize it using r.js
 To use the optimizer, you need [node.js](http://nodejs.org) or Java 6 installed. These instructions assume Node is being used. See the [Optimization page](http://requirejs.org/docs/optimization.html) for more information.
 
 r.js and a build configuration is included in the tools/ folder. To build, navigate to tools/ and type `node r.js -o build.js`. You will find the built product in the www-build folder. If you serve that directory instead, you can see in the network panel of the web developer tools that the files aren't loaded separately any more.
