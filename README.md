@@ -1,7 +1,7 @@
 Example of using jQuery and require.js with a shim config.
 ====
 
-This example shows one way to load jQuery and jQuery plugins with require.js.  jQuery itself registers as an AMD module and can easily be loaded. Most plugins, however, does not register as AMD modules, and therefore, require.js doesn't know that the plugins need jQuery to be loaded.
+This example shows one way to load jQuery and jQuery plugins with require.js.  jQuery itself registers as an AMD module and can easily be loaded. Most plugins, however, do not register as AMD modules, and therefore, require.js doesn't know that the plugins need jQuery to be loaded.
 
 If the plugins you use all call [define()](http://requirejs.org/docs/api.html#define) to declare their dependencies, then you may want to use the [example that uses jQuery from a CDN](https://github.com/requirejs/example-jquery-cdn) instead.
 
