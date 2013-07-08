@@ -10,8 +10,8 @@
     "mainConfigFile": "../www/js/app.js",
 
     "modules": [
-        //Optimize the application files. jQuery is not 
-        //included since it is already in require-jquery.js
+        //Optimize the application files. jQuery and the plugins will be included
+        //automatically, as they are dependencies of app.js.
         {
             "name": "app"
         }
