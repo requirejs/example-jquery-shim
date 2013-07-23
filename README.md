@@ -7,6 +7,8 @@ If the plugins you use all call [define()](http://requirejs.org/docs/api.html#de
 
 The most important part of this example is the app.js file, which specifies the [shim configuration](http://requirejs.org/docs/api.html#config-shim) for the plugins.
 
+**If you want IE6-8 support**, clone this repo, but replace the jQuery file with a jQuery 1.9 release. The jQuery 2 used in this project does not work with those browsers, a 1.9 release is needed.
+
 ###Project structure
 
 tools/
