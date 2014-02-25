@@ -18,12 +18,6 @@ var http = require('http'),
 http.createServer(function (request, response) {
     var uri = url.parse(request.url).pathname,
         filename = path.join(__dirname, '..', uri);
-/*
-    if(/favicon.ico$/.test(uri)) {
-      response.writeHead(204, {});
-      return response.end();
-    }
-    */
 
     fs.exists(filename, function (exists) {
       if (!exists) {
