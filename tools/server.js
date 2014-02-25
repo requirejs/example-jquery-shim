@@ -12,37 +12,42 @@ var http = require('http'),
     types = {
         'html': 'text/html',
         'js': 'application/javascript'
-    };
+    },
+    site = 'http://localhost:' + port;
 
 http.createServer(function (request, response) {
     var uri = url.parse(request.url).pathname,
         filename = path.join(__dirname, '..', uri);
+/*
+    if(/favicon.ico$/.test(uri)) {
+      response.writeHead(204, {});
+      return response.end();
+    }
+    */
 
-    if(!fs.lstatSync(filename).isDirectory()) {
-        fs.exists(filename, function (exists) {
-            if (!exists) {
-                response.writeHead(404, {'Content-Type': 'text/plain'});
-                response.write('404 Not Found\n');
-                response.end();
-                return;
-            }
+    fs.exists(filename, function (exists) {
+      if (!exists) {
+          response.writeHead(404, {'Content-Type': 'text/plain'});
+          response.write('404 Not Found\n');
+          response.end();
+          return;
+      }
 
+      if(!fs.lstatSync(filename).isDirectory()) {
             var type = filename.split('.');
             type = type[type.length - 1];
 
             response.writeHead(200, { 'Content-Type': types[type] + '; charset=utf-8' });
             fs.createReadStream(filename).pipe(response);
-        });
-    } else {
+      } else {
         /**
          * if users visit the site such as http://localhost:8888
          * then lead them to http://localhost:8888/www/app.html
-         *
          */
-        response.writeHead(200, {'Content-Type': 'text/html'});
-        response.write('Please visit <a href="www/app.html">here</a>\n');
+        response.writeHead(301, {'Location': site + '/www/app.html' });
         response.end();
-    }
+     }
+  });
 }).listen(parseInt(port, 10));
 
-console.log('Static file server running at\n  => http://localhost:' + port + '/\nCTRL + C to shutdown');
+console.log('Static file server running at\n  => ' + site + '/\nCTRL + C to shutdown');
