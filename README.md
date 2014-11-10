@@ -35,7 +35,7 @@ The main file of this setup is www/js/app.js. It is loaded from app.html by this
 <script data-main="js/app" src="js/lib/require.js"></script>
 ```
 
-app.js is mainly about configuration. The shim configuration specifies jQuery as a dependency for jQuery.alpha and jQUery.beta. Finally, our main code is loaded at the bottom of the file:
+app.js is mainly about configuration. The shim configuration specifies jQuery as a dependency for jQuery.alpha and jQuery.beta. Finally, our main code is loaded at the bottom of the file:
 
 ```javascript
 requirejs.config({
